@@ -2,7 +2,7 @@
 session_start();
 include('db/db.php'); // connection sa database
 
-// ✅ get username from URL then fetch account_number
+
 $prefill_acc = '';
 
 if (isset($_GET['acc_num'])) {
@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
     $acc_num = $_POST['account_number'];
     $pass = md5($_POST['password']);
 
-    // use account_number 
+    // use account_number to fetch user data
     $result = mysqli_query($conn, "SELECT * FROM users WHERE account_number='$acc_num'");
     $user = mysqli_fetch_assoc($result);
 
