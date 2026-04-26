@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
     $acc_num = $_POST['account_number'];
     $pass = md5($_POST['password']);
 
-    // use account_number (NOT username)
+    // use account_number 
     $result = mysqli_query($conn, "SELECT * FROM users WHERE account_number='$acc_num'");
     $user = mysqli_fetch_assoc($result);
 
